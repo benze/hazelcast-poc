@@ -19,7 +19,7 @@ public class MultiListenerTest {
         HazelcastProducer hazelcastProducer = new HazelcastProducer();
         HazelcastInstance hazelcastInstance =hazelcastProducer.getHazelcastInstance();
 
-        Cache cache = hazelcastProducer.getUserRoleCache(hazelcastInstance,
+        Cache cache = hazelcastProducer.createUserRoleCache(hazelcastInstance,
                 new Factory<CacheEntryListener<? super String, ? super String[]>>() {
                     @Override
                     public CacheEntryListener<? super String, ? super String[]> create() {

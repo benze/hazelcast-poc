@@ -1,14 +1,12 @@
 package data;
 
 import annotation.UserRolesCache;
-import com.hazelcast.cache.ICache;
-import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IAtomicLong;
 
+import javax.cache.Cache;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-import javax.inject.Named;
 
 @ApplicationScoped
 public class CacheDataGenerator {
@@ -18,12 +16,12 @@ public class CacheDataGenerator {
     }
 
     @Inject
-    public CacheDataGenerator(@UserRolesCache ICache<String, String[]> cache, HazelcastInstance hazelcastInstance) {
+    public CacheDataGenerator(@UserRolesCache Cache<String, String[]> cache, HazelcastInstance hazelcastInstance) {
         this.cache = cache;
         this.hazelcastInstance = hazelcastInstance;
     }
 
-    private ICache<String, String[]> cache;
+    private Cache<String, String[]> cache;
     private HazelcastInstance hazelcastInstance;
 
     public void generateData(){
