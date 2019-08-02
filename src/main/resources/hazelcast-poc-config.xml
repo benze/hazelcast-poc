@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hazelcast xmlns="http://www.hazelcast.com/schema/config"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.hazelcast.com/schema/config
+           http://www.hazelcast.com/schema/config/hazelcast-config-3.12.xsd">
+
+    <instance-name>ADAMS-Hazelcast</instance-name>
+
+    <group>
+        <name>hazelcast-poc-cluster</name>
+    </group>
+
+<!--    <cp-subsystem>-->
+<!--        <cp-member-count>3</cp-member-count>-->
+<!--    </cp-subsystem>-->
+
+    <network>
+        <rest-api enabled="true">
+            <endpoint-group name="HEALTH_CHECK" enabled="true"/>
+            <endpoint-group name="CLUSTER_READ" enabled="true"/>
+            <endpoint-group name="DATA" enabled="true"/>
+        </rest-api>
+<!--        <port auto-increment="false">5701</port>-->
+        <join>
+            <multicast enabled="false"/>
+            <tcp-ip enabled="true">
+                <interface>127.0.0.1</interface>
+            </tcp-ip>
+        </join>
+    </network>
+
+</hazelcast>
