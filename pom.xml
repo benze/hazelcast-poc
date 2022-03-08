@@ -9,7 +9,7 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
-        <hazelcast.version>3.12</hazelcast.version>
+        <hazelcast.version>5.1</hazelcast.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <weld-se-core.version>2.3.3.Final</weld-se-core.version>
